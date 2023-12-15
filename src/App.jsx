@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 import { SharedLayout } from "./components";
 import NotFound from "./pages/NotFound/NotFound";
 
