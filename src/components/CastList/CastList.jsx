@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./CastList.module.css";
 import CastListItem from "../CastListItem/CastListItem";
+import PropTypes from "prop-types";
 
 const CastList = ({ dataCasts }) => {
   return (
@@ -10,6 +11,14 @@ const CastList = ({ dataCasts }) => {
       ))}
     </ul>
   );
+};
+
+CastList.propTypes = {
+  dataCasts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default CastList;

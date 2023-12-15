@@ -1,5 +1,6 @@
 import css from "./MovieCards.module.css";
 import { MovieCardsItem } from "../../components";
+import PropTypes from "prop-types";
 
 export const MovieCards = ({ data }) => {
   return (
@@ -9,4 +10,12 @@ export const MovieCards = ({ data }) => {
       ))}
     </ul>
   );
+};
+MovieCards.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      
+    })
+  ).isRequired,
 };

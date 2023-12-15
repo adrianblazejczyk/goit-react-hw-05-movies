@@ -2,6 +2,7 @@ import css from "./Home.module.css";
 import { getTrending } from "../../services/apiTMDB";
 import { MovieCards } from "../../components";
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const Home = () => {
   const [trendingFilms, settrendingFilms] = useState([]);
@@ -26,5 +27,7 @@ const Home = () => {
     </main>
   );
 };
-
+Home.propTypes = {
+  trendingFilms: PropTypes.arrayOf(PropTypes.shape({})),
+};
 export default Home;

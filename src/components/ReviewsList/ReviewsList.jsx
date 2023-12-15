@@ -1,4 +1,5 @@
 import { ReviewsListItem } from "../../components";
+import PropTypes from "prop-types";
 export const ReviewsList = ({ dataReviews }) => {
   return (
     <ul>
@@ -7,4 +8,11 @@ export const ReviewsList = ({ dataReviews }) => {
       ))}
     </ul>
   );
+};
+ReviewsList.propTypes = {
+  dataReviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

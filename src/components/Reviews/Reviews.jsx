@@ -1,11 +1,13 @@
+import css from "./Reviews.module.css";
 import { getMovieReviews } from "../../services/apiTMDB";
 import { ReviewsList } from "../../components";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
+
 const Reviews = () => {
   const { productId } = useParams();
-  const [dataReviews, setDataReviews] = useState();
+  const [dataReviews, setDataReviews] = useState([]);
 
   useEffect(() => {
     getMovieReviews(productId)
@@ -17,14 +19,14 @@ const Reviews = () => {
       })
       .finally(() => {});
   }, [productId]);
-
   return (
-    dataReviews && (
-      <section>
-        {console.log(dataReviews.lenght)}
+    <section>
+      {dataReviews.length > 0 ? (
         <ReviewsList dataReviews={dataReviews} />
-      </section>
-    )
+      ) : (
+        <h3 className={css.noFoud}>No reviews available</h3>
+      )}
+    </section>
   );
 };
 

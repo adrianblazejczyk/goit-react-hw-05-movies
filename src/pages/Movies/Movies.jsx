@@ -8,6 +8,7 @@ const Movies = () => {
   const [dataFilms, setDataFilms] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     setSearchQuery(searchParams.get("query") || "");
@@ -20,6 +21,7 @@ const Movies = () => {
   };
 
   const handlerOnClick = (eve) => {
+    setSearch(true);
     eve.preventDefault();
     setSearchParams({ query: searchQuery });
     searchMovies(searchQuery)
@@ -40,7 +42,11 @@ const Movies = () => {
         searchQuery={searchQuery}
         handleInputChange={handleInputChange}
       />
-      <MovieCards data={dataFilms} />
+      {dataFilms.length > 0 ? (
+        <MovieCards data={dataFilms} />
+      ) : (
+        search && <h3 className={css.noFoud}>No reviews available</h3>
+      )}
     </main>
   );
 };

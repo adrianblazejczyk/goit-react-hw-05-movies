@@ -11,6 +11,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
+
 const MovieDetails = () => {
   const { productId } = useParams();
   const [dataFilmDetails, setDataFilmDetails] = useState();

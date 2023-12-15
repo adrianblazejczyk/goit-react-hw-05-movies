@@ -3,6 +3,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 
+
 export function SharedLayout() {
   return (
     <>
@@ -13,4 +14,3 @@ export function SharedLayout() {
     </>
   );
 }
-export default SharedLayout;

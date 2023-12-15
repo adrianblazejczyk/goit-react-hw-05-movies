@@ -1,7 +1,8 @@
+import css from "./NotFound.module.css";
 import React from "react";
 const NotFound = () => {
   return (
-    <main style={{ textAlign: "center" }}>
+    <main className={css.main}>
       <b style={{ fontSize: 64 }}>404</b>
       <p>Sorry, we couldn't find that page :( </p>
       <img

@@ -1,4 +1,5 @@
 import css from "./SearchBar.module.css";
+import PropTypes from "prop-types";
 export const SearchBar = ({
   handlerOnClick,
   searchQuery,
@@ -20,4 +21,10 @@ export const SearchBar = ({
       </button>
     </form>
   );
+};
+
+SearchBar.propTypes = {
+  handlerOnClick: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
 };

@@ -21,12 +21,13 @@ const fetchData = async (apiPath, queryParams) => {
     }
   } catch (error) {
     console.error("Błąd podczas pobierania danych:", error);
+    throw new Error("Błąd podczas pobierania danych z API");
   }
 };
 
 export const getTrending = async () => {
   const apiPath = "trending/movie/day?language=en-US";
-  // const apiPath = "trending/all/day";
+
   const params = {
     language: "en-US",
   };

@@ -3,6 +3,7 @@ import css from "./MovieCardsItem.module.css";
 import { IMAGE_BASE_URL } from "../../services/apiTMDB";
 
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export const MovieCardsItem = ({ dataFilm }) => {
   const location = useLocation();
@@ -26,4 +27,12 @@ export const MovieCardsItem = ({ dataFilm }) => {
       </Link>
     </li>
   );
+};
+MovieCardsItem.propTypes = {
+  dataFilm: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    poster_path: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    
+  }).isRequired,
 };
