@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/936.5920d18e.chunk.css","mappings":"AAAA,kBACE,qBAAuB,CACvB,WACF,CACA,uBACE,UACF","sources":["pages/Home/Home.module.css"],"sourcesContent":[".main {\n  background-color: black;\n  height: 100%;\n}\n.titlePage {\n  color: white;\n}\n"],"names":[],"sourceRoot":""}
